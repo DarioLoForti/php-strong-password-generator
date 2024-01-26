@@ -1,6 +1,8 @@
 <?php
 include 'functions.php';
 
+    session_start();
+
         // Verifica se è stato inviato il form
     if (isset($_GET['password_length'])) {
         // Ottieni la lunghezza della password dal form
@@ -8,6 +10,13 @@ include 'functions.php';
 
         // Genera la password utilizzando la funzione da functions.php
         $generatedPassword = generatePassword($passwordLength);
+
+        // Salva la password nella sessione
+        $_SESSION['generated_password'] = $generatedPassword;
+
+        // Redirect alla pagina dedicata
+        header('Location: ViewPassword.php');
+        
     }
 
 ?>
