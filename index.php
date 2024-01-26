@@ -34,17 +34,17 @@ include 'functions.php';
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
-                <h1 class="py-5">Password Generator</h1>
+                <h1 class="py-5 text-white">Password Generator</h1>
             </div>
             <div class="offset-4 col-4 text-center justify-content-center">
                 <?php if (isset($generatedPassword)): ?>
-                    <p>La tua password generata è: <?php echo $generatedPassword; ?></p>
+                    <p class="py-5 text-white">La tua password generata è: <?php echo $generatedPassword; ?></p>
                 <?php endif; ?>
             
                 <form action="index.php" method="GET">
-                    <label for="password_length">Inserisci la lunghezza della password:</label>
-                    <input type="number" name="password_length" id="password_length" class="form-control" required>
-                    <button type="submit">Genera Password</button>
+                    <label for="password_length"></label>
+                    <input type="number" name="password_length" id="password_length" class="form-control"  placeholder="Inserisci la lunghezza della password:" required>
+                    <button class="my-5 p-3 type="submit">Genera Password</button>
                 </form>
             </div>
         </div>
